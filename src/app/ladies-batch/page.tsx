@@ -16,7 +16,11 @@ const benefits = [
 export default function LadiesBatchPage() {
   return (
     <>
-      <LadiesBatch />
+      <LadiesBatch
+        isPageHero
+        ctaHref="/free-trial"
+        ctaText="Book Free Trial for Ladies Batch"
+      />
       <section className="section">
         <SectionHeader eyebrow="Why Women Love It" title="Designed Around You" />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

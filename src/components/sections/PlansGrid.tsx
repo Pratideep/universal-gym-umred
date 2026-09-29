@@ -11,7 +11,7 @@ type Billing = "monthly" | "annual";
 type Membership = "individual" | "couple";
 
 export function PlansGrid() {
-  const [billing, setBilling] = useState<Billing>("annual");
+  const [billing, setBilling] = useState<Billing>("monthly");
   const [membership, setMembership] = useState<Membership>("individual");
 
   return (
@@ -81,7 +81,7 @@ export function PlansGrid() {
                       "rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider",
                       active ? "bg-brand-navy text-brand-cyan" : "bg-brand-cyan/15 text-brand-cyan-dim"
                     )}>
-                      Save up to 28%
+                      2 Months Free
                     </span>
                   )}
                 </span>
@@ -112,6 +112,11 @@ export function PlansGrid() {
                 <h3 className={cn("h-display text-2xl", p.highlight ? "text-white" : "text-ink-900")}>
                   {p.name}
                 </h3>
+                {p.description && (
+                  <p className={cn("text-xs mt-1.5 min-h-[32px] leading-relaxed", p.highlight ? "text-white/70" : "text-ink-500")}>
+                    {p.description}
+                  </p>
+                )}
                 <div className="mt-3 flex items-baseline gap-1">
                   <AnimatePresence mode="wait">
                     <motion.span

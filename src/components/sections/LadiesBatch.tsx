@@ -2,9 +2,19 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { Clock, Shield, Heart } from "lucide-react";
 
-export function LadiesBatch() {
+interface LadiesBatchProps {
+  isPageHero?: boolean;
+  ctaHref?: string;
+  ctaText?: string;
+}
+
+export function LadiesBatch({
+  isPageHero = false,
+  ctaHref = "/ladies-batch",
+  ctaText = "Reserve Your Slot",
+}: LadiesBatchProps) {
   return (
-    <section className="relative overflow-hidden bg-brand-navy">
+    <section className={`relative overflow-hidden bg-brand-navy ${isPageHero ? "pt-28 pb-12" : ""}`}>
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-30"
         style={{
@@ -45,7 +55,9 @@ export function LadiesBatch() {
           </div>
 
           <div className="mt-8">
-            <Link href="/ladies-batch" className="btn-primary">Reserve Your Slot</Link>
+            <Link href={ctaHref} className="btn-primary">
+              {ctaText}
+            </Link>
           </div>
         </Reveal>
       </div>

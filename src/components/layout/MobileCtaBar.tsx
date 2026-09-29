@@ -24,7 +24,7 @@ export function MobileCtaBar() {
         </a>
         <Link
           href="/free-trial"
-          className="flex items-center justify-center gap-2 py-4 bg-brand-cyan text-brand-navy font-bold min-h-[56px] transition active:scale-95"
+          className="flex items-center justify-center gap-2 py-4 bg-brand-cyan text-white font-bold min-h-[56px] transition active:scale-95"
         >
           <Zap size={18} /> Free Trial
         </Link>

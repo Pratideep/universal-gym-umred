@@ -1,327 +1,253 @@
-# Home Page UI Improvement Plan
-
-## Objective
-
-Improve the Universal Gym home page so it feels more intentional, easier to scan, and more conversion-focused for first-time visitors in Umred. The goal is not a full redesign. The goal is to strengthen the existing "iron and chalk" visual system, reduce repeated patterns, and guide more users toward `Book Free Trial`, `See Plans`, and WhatsApp contact.
-
-## Current Read
-
-The current homepage already has strong ingredients:
-
-- A clear hero with proof points and pricing.
-- Good trust signals early in the page.
-- A practical section lineup covering equipment, plans, reviews, and FAQs.
-- A consistent warm palette and solid CTA styling.
-
-The main UX issue is narrative flow. The page currently feels like a stack of good sections instead of one guided story. Several sections repeat the same centered-header-plus-grid rhythm, so the user gets information but not much momentum. The result is a page that looks credible, but not yet as premium, sharp, or conversion-oriented as it could be.
-
-## Top Problems To Solve
-
-### 1. The page does not create a strong conversion journey
-
-Visitors quickly learn that the gym is affordable and well-rated, but they are not guided through a strong sequence like:
-
-1. Why this gym is worth noticing
-2. Why it is right for me
-3. What I get
-4. What it costs
-5. Why I should trust it
-6. What to do next
-
-The current order is close, but the transitions between sections are not doing enough work.
-
-### 2. Too many sections use the same layout rhythm
-
-The home page relies heavily on:
-
-- centered section headers
-- card grids
-- similar vertical spacing
-- similar reveal patterns
-
-This creates consistency, but it also flattens hierarchy. The page needs more contrast between editorial sections, proof sections, interactive sections, and conversion sections.
-
-### 3. Some proof is present but not surfaced at the highest-value moments
-
-Important proof exists in `Hero`, `TrustBadges`, reviews, and transformations, but it is spread out instead of strategically concentrated around decisions. Pricing, coach credibility, review volume, and equipment scale should support the CTA moments more directly.
-
-### 4. The homepage still feels slightly generic in places
-
-Even with real copy improvements in the hero, some sections still read like a polished template:
-
-- trust badges are useful but visually lightweight
-- about cards are informative but not emotionally distinctive
-- the final CTA band is clear but not memorable
-
-The home page should feel more like a strong local market leader and less like a standard fitness landing page.
-
-### 5. Mobile scanning can become repetitive
-
-The page likely works responsively, but on mobile it can feel long because many sections repeat the same pattern of heading, cards, and button. The content needs more compression, more varied pacing, and stronger "decision checkpoints."
-
-## Improvement Strategy
-
-Keep the current architecture, but strengthen it in three ways:
-
-1. Improve information hierarchy so each section has a clearer job.
-2. Increase layout contrast so the page feels more designed and less templated.
-3. Move trust and CTA moments closer to user decisions.
-
-## Section-By-Section Plan
-
-### 1. Hero
-
-Current strength:
-
-- Strong headline
-- Good local positioning
-- Real proof metrics
-- Clear dual CTA
-
-Improvements:
-
-- Tighten the message around the primary promise: affordable, serious, beginner-friendly fitness in Umred.
-- Reduce paragraph density by turning one supporting paragraph into a short benefit row.
-- Add 2 to 3 fast-scan reassurance chips under the CTAs, such as `No joining fee`, `Beginner friendly`, and `Ladies batch available`.
-- Make the right-side info panel feel more like a decision widget, not just a timetable card.
-- Add one compact social-proof line inside the hero CTA zone so proof supports action immediately.
-
-Implementation direction:
-
-- Refine copy and spacing in [`src/components/sections/Hero.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/Hero.tsx).
-- Consider turning the lower counters into a more intentional stat strip with stronger labels and tighter spacing.
-
-### 2. Trust Section
-
-Current strength:
-
-- Quick proof at a glance
-- Good use of icons and factual claims
-
-Improvements:
-
-- Upgrade this from a simple icon strip into a stronger "why people trust us" band.
-- Group the six items into fewer, more meaningful proof clusters.
-- Increase contrast between the label and supporting text so scanning is faster.
-- Consider replacing one generic badge such as hygiene with a stronger differentiator if real proof exists.
-
-Implementation direction:
-
-- Rework layout and content density in [`src/components/sections/TrustBadges.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/TrustBadges.tsx).
-- Aim for fewer but more important claims per row on mobile.
-
-### 3. About / Why People Stay
-
-Current strength:
-
-- Good emotional framing
-- Helpful reasons beyond price
-
-Improvements:
-
-- Make this section feel more editorial and less like a four-card feature grid.
-- Introduce one bigger lead story or highlighted differentiator card, with the remaining reasons as supporting points.
-- Bring the coach and community angle forward because that is more persuasive than generic "equipment maintained" language.
-- Reduce copy length per card so the section scans faster.
-
-Implementation direction:
-
-- Redesign the content hierarchy in [`src/components/sections/AboutTeaser.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/AboutTeaser.tsx).
-- Keep four reasons if needed, but vary card scale and emphasis.
-
-### 4. Equipment Section
-
-Current strength:
-
-- Interactive category tabs
-- Strong utility value for users comparing facilities
-
-Improvements:
-
-- Add a stronger section intro that explains why the equipment matters to the member experience, not just what is available.
-- Show one short line of operational proof near the tabs, such as floor size, machine count, or less waiting time.
-- Improve first-view orientation on mobile so the swipe/tap model is obvious immediately.
-- Consider a compact "facility highlights" row above the tabs.
-
-Implementation direction:
-
-- Keep the tab system in [`src/components/sections/EquipmentTabs.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/EquipmentTabs.tsx).
-- Improve surrounding framing in [`src/app/page.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/page.tsx) where the section is introduced.
-
-### 5. Ladies Batch Section
-
-Current strength:
-
-- Relevant local differentiator
-- Breaks the page rhythm with a dedicated topic
-
-Improvements:
-
-- Treat this as a high-trust conversion section, not just an informational insert.
-- Make the benefits more concrete: privacy, comfort, confidence, coaching support, and timing clarity.
-- Add one direct CTA for women who are specifically evaluating that option.
-
-Implementation direction:
-
-- Keep this section prominent.
-- Ensure the content feels purpose-built and not secondary.
-
-### 6. Membership Section
-
-Current strength:
-
-- Clear pricing
-- Annual/monthly toggle
-- Good highlighting of the middle plan
-
-Improvements:
-
-- Add clearer recommendation logic so users understand who each plan is for.
-- Reduce friction by answering a few pricing questions near the cards: who should choose Starter vs Pro, what is included, and whether there are hidden charges.
-- Make the savings message more visually immediate when annual billing is active.
-- Add a low-pressure secondary action under pricing, such as asking questions on WhatsApp.
-
-Implementation direction:
-
-- Expand decision support inside [`src/components/sections/PlansGrid.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/PlansGrid.tsx).
-- Use plan copy from [`src/data/plans.ts`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/data/plans.ts) more strategically if plan descriptions are added later.
-
-### 7. Reviews and Transformations
-
-Current strength:
-
-- Strong social proof sources
-- Real emotional persuasion
-
-Improvements:
-
-- Bring review credibility and physical-result credibility into one more unified proof story.
-- Add stronger visual separation between the Google review layer and the transformation layer.
-- Include clearer framing for what the transformations prove: consistency, coaching, and realistic outcomes over time.
-- Consider a short "what people mention most" strip based on review themes.
-
-Implementation direction:
-
-- Refine section structure in [`src/app/page.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/page.tsx).
-- Improve supporting cues in [`src/components/sections/GoogleReviews.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/GoogleReviews.tsx) and [`src/components/sections/TestimonialCarousel.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/TestimonialCarousel.tsx).
-
-### 8. FAQ
-
-Current strength:
-
-- Good friction-reduction section before conversion
-
-Improvements:
-
-- Add a short intro that frames this as decision support, not just a content block.
-- Prioritize the top 5 to 7 objections a first-time member actually has.
-- Add one direct CTA immediately below the FAQ for users who still have questions.
-
-Implementation direction:
-
-- Keep the current accordion but tighten the section framing and CTA adjacency.
-
-### 9. Final CTA Band
-
-Current strength:
-
-- Simple and actionable
-
-Improvements:
-
-- Make the last conversion moment feel more premium and conclusive.
-- Add one last burst of trust: review count, no joining fee, or same-day WhatsApp response.
-- Improve the visual atmosphere so it feels like a closing statement, not just a footer-adjacent banner.
-
-Implementation direction:
-
-- Upgrade content and layout in [`src/components/sections/CtaBand.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/CtaBand.tsx).
-
-## Visual Design Recommendations
-
-### Layout
-
-- Introduce more alternation between centered, split, staggered, and asymmetric section layouts.
-- Use one or two sections with stronger editorial composition instead of making every section a grid under a header.
-- Increase contrast between proof sections and browsing sections.
-
-### Typography
-
-- Keep `Oswald` for display, but use it more selectively for maximum impact.
-- Increase distinction between display headlines, support copy, labels, and utility text.
-- Shorten body copy in high-scan sections.
-
-### Color and Emphasis
-
-- Preserve the warm dark palette, but use the ember accent more strategically.
-- Reserve the strongest accent color for key actions, active states, and proof highlights.
-- Add one or two deeper surface treatments so dark sections feel layered rather than flat.
-
-### Motion
-
-- Keep motion purposeful and not everywhere.
-- Use motion to reveal hierarchy, not simply to animate each card.
-- Add a few more "section transition" moments rather than repeating similar card-entry animations throughout.
-
-### Mobile Experience
-
-- Compress vertical spacing where section intros and grids stack too similarly.
-- Surface the most important proof before long horizontal or card-heavy content.
-- Ensure every major section has one clear takeaway visible without needing to scroll deeply within that section.
-
-## Priority Roadmap
-
-### Phase 1: High-Impact Copy and Hierarchy
-
-- Refine hero messaging and CTA support.
-- Rework trust badges into sharper proof clusters.
-- Improve membership decision clarity.
-- Strengthen the final CTA band.
-
-Expected outcome:
-Better first impression and stronger conversion intent without major layout changes.
-
-### Phase 2: Layout Contrast and Section Rhythm
-
-- Redesign About section hierarchy.
-- Improve equipment section framing.
-- Restructure reviews and transformations into a clearer proof arc.
-- Tune section spacing and alternation across the page.
-
-Expected outcome:
-The page feels more premium, less repetitive, and more guided.
-
-### Phase 3: Polish and Conversion Optimization
-
-- Add richer CTA adjacency near FAQ and pricing.
-- Refine microcopy across labels, badges, and support text.
-- Improve mobile pacing and section compression.
-- Tune motion for clarity and restraint.
-
-Expected outcome:
-Cleaner scanning, better mobile usability, and higher overall perceived quality.
-
-## Suggested File Focus
-
-- [`src/components/sections/Hero.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/Hero.tsx)
-- [`src/components/sections/TrustBadges.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/TrustBadges.tsx)
-- [`src/components/sections/AboutTeaser.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/AboutTeaser.tsx)
-- [`src/components/sections/PlansGrid.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/PlansGrid.tsx)
-- [`src/components/sections/GoogleReviews.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/GoogleReviews.tsx)
-- [`src/components/sections/TestimonialCarousel.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/TestimonialCarousel.tsx)
-- [`src/components/sections/CtaBand.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/CtaBand.tsx)
-- [`src/app/page.tsx`](/Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/page.tsx)
-
-## Success Criteria
-
-The improved homepage should feel:
-
-- more premium without losing affordability
-- more local and human, less template-like
-- easier to scan on mobile
-- more persuasive before the user reaches pricing
-- more decisive at every CTA moment
-
-## Recommended Next Step
-
-Implement Phase 1 first. It offers the best return with the least engineering risk, and it will make the later visual changes easier to judge.
+# Universal Gym (Umred) — Comprehensive UI/UX Improvement Master Plan
+
+**Document Version:** 2.0  
+**Target:** Universal Gym Website (Next.js 16 App Router · Tailwind CSS 3 · Framer Motion · React 19)  
+**Core Aesthetic:** *Iron & Chalk* (Warm Dark Charcoal, Raw Steel, Warm Paper, Ember Red-Orange `#E2552B`)  
+**Primary Goal:** Transform the digital presence from a standard gym brochure into an ultra-high-converting, deeply authentic local fitness landmark for Umred & Nagpur.
+
+---
+
+## 1. Executive Summary & Design Vision
+
+### 1.1 The Core Proposition
+Universal Gym is the largest (5,000+ sq ft), best-equipped (50+ machines), and most affordable (₹700/mo, zero joining fee) fitness facility in Umred. Its competitive moats are:
+1. **Unbeatable Value & Transparency:** ₹700/month with zero hidden charges or registration fees.
+2. **Dedicated Women-Only Batch:** Safe, comfortable daily session (4:00 PM – 5:00 PM).
+3. **Serious, High-Spec Facility:** Full mirror wall, high ceilings, plate-loaded Jaguar series, posing room, cardio row.
+4. **Community & Coaching:** 10+ years coaching pedigree, supportive of beginners and advanced bodybuilders alike.
+
+### 1.2 UX North Star
+> *"A visitor should know within 5 seconds that this gym is legitimate, impeccably equipped, extraordinarily affordable, and welcoming to regular people in Umred — with zero intimidation."*
+
+---
+
+## 2. Comprehensive UX Audit: Critical Friction Points
+
+### 🚨 Critical Severity (Fix Immediately)
+| Issue | Location | Root Cause | Impact |
+|---|---|---|---|
+| **Price Displays as `₹- /month` on Load** | [`src/components/sections/PlansGrid.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/PlansGrid.tsx#L14) | Default state is `billing = "annual"`, but `annual: 0` in [`src/data/plans.ts`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/data/plans.ts#L16). | Destroys primary conversion hook. First-time visitors see undefined pricing instead of ₹700. |
+| **"Three Plans" Copy vs 2 Actual Plans** | [`src/app/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/page.tsx#L54), [`src/app/membership/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/membership/page.tsx#L8) | Section header says *"Three plans. No joining fee."* and comparison table includes "Elite", but only `Starter` & `Pro` exist in dataset. | Inconsistency breeds distrust and causes pricing confusion. |
+| **Lead Form Buried on Mobile** | [`src/app/free-trial/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/free-trial/page.tsx#L31) | 2-column layout stacks Perks + BMI Calculator *above* the Trial Form on mobile. | Mobile users have to scroll through 1200px of secondary widgets before reaching the form. |
+| **Circular Link on Ladies Batch** | [`src/components/sections/LadiesBatch.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/LadiesBatch.tsx#L48) | CTA links to `/ladies-batch` from within `/ladies-batch`. Also missing top padding (`pt-28`), getting hidden under fixed navbar. | Frustrating dead loop; broken layout on load. |
+| **Desktop Nav Overcrowding** | [`src/components/layout/Navbar.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/layout/Navbar.tsx#L7) | 10 distinct navigation links in a single row (`Home`, `About`, `Coach`, `Equipment`, `Ladies Batch`, `Results`, `Membership`, `Gallery`, `FAQ`, `Contact`). | Wraps or collides on 1024px–1280px laptop screens. |
+
+### ⚠️ Moderate Severity (UX & Conversion Leaks)
+- **Repetitive Section Rhythm:** Homepage is a continuous repetition of *Centered Eyebrow + Heading -> 3-Card Grid -> Centered Eyebrow + Heading*. Causes scroll blindness.
+- **Low Contrast on Mobile CTA Bar:** `bg-brand-cyan text-brand-navy` provides suboptimal contrast ratio on mobile devices in bright daylight.
+- **Floating Widget Collision:** Fixed `MobileCtaBar` (bottom) + `WhatsAppFAB` (bottom-20) can collide or overlap content on smaller phone viewports (iPhone SE, 375px).
+- **Stock vs Real Photos Dissonance:** Real authentic photos of the Umred floor (`gym-floor-*.jpeg`) are mixed with generic international stock photos on `/equipment` and `/gallery`.
+
+---
+
+## 3. Architecture & Information Architecture (IA) Overhaul
+
+### 3.1 Streamlined Desktop Navigation
+Group secondary pages into a clean, modern dropdown structure to keep the top bar uncluttered and focused on conversion.
+
+```
+[Logo: UNIVERSAL GYM Umred]
+├── Explore ▾ (Mega/Dropdown)
+│   ├── Equipment & Floor Tour
+│   ├── Real Facility Gallery
+│   ├── Head Coach & Credentials
+│   └── About Our Mission
+├── Membership & Pricing
+├── Ladies Batch (Highlight Pill with Heart icon)
+├── Results & Stories
+└── [Book Free Trial (Ember CTA)] + [WhatsApp Direct]
+```
+
+### 3.2 Mobile Drawer & Sheet UX
+Replace the plain full-screen link stack with an interactive mobile bottom sheet / drawer:
+1. **Header with Quick Hours:** Shows `"Open Now until 10:00 PM"` badge.
+2. **Visual Category Tiles:** 2x2 grid with rich imagery for `Equipment`, `Ladies Batch`, `Pricing`, `Coach`.
+3. **Direct Contact Bar:** 1-tap WhatsApp and 1-tap Phone call.
+
+---
+
+## 4. Page-by-Page Actionable Enhancement Blueprint
+
+### 4.1 Home Page (`/`) — High-Conversion Story Arc
+
+```mermaid
+graph TD
+    A[Hero: Value Hook + Real Floor Backdrop] --> B[Trust & Proof Strip: 4.8★, 500+ Members, No Joining Fee]
+    B --> C[Visual Floor Teaser: Real Photos + Equipment Density]
+    C --> D[Ladies Batch Spotlight: High-Trust Safe Space]
+    D --> E[Transparent Membership Cards: Starter vs Pro with Monthly Default]
+    E --> F[Interactive Before/After & Real Google Reviews Carousel]
+    F --> G[Friction-Killing FAQ Accordion]
+    G --> H[Final Conversional CTA Band: Come Train for a Day]
+```
+
+#### Detailed Section Upgrades:
+1. **Hero Section:**
+   - **Headline:** *"The Biggest Gym in Umred. Zero Joining Fee."*
+   - **Subheading:** Replace the dual dense paragraphs with a snappy 3-point value proposition:
+     - 🏋️ **5,000+ sq ft floor** with 50+ machines (no waiting for racks)
+     - 💰 **Starts at just ₹700/mo** (clean, upfront pricing)
+     - 🛡️ **Women-only dedicated batch** (4 PM – 5 PM daily)
+   - **Dual Action:** `[Book 1-Day Free Pass]` (Primary Ember) + `[View Plans & Pricing]` (Ghost Glass).
+   - **Reassurance Micro-bar:** `No credit card · Walk in any time · WhatsApp confirmation`.
+
+2. **Trust Strip:**
+   - Transition from 6 loose badges into 4 solid social proof anchors:
+     1. ⭐ **4.8/5 Rating** (127+ verified Google reviews)
+     2. 🏆 **10+ Years Coaching** (Certified national-level trainer)
+     3. 👥 **500+ Active Members** across Umred & Nagpur rural
+     4. 🏷️ **₹0 Joining / Registration Fee** (Guaranteed forever)
+
+3. **Equipment Teaser Section:**
+   - Integrate the authentic floor photos (`gym-floor-plate-loaded-row.jpeg`, `gym-floor-cardio-mural.jpeg`).
+   - Add a fast pill filter: `Plate Loaded`, `Cardio Lineup`, `Free Weights`, `Posing Room`.
+   - Add a badge: *"Equipped with Jaguar Series heavy plate-loaded stations"*.
+
+4. **Membership Cards:**
+   - **Default to `Monthly` billing** so users immediately see ₹700 and ₹1,200.
+   - If annual discount is offered, provide a real calculation (e.g. ₹7,000/year — Save 2 months) instead of `"₹- /month"`.
+   - Add *"Who this is for"* guidance tags:
+     - **Starter (₹700):** *"Best for students, beginners, and steady weight trainers."*
+     - **Pro (₹1,200):** *"Best for dedicated lifters, cardio classes, and structured coaching."*
+
+---
+
+### 4.2 Membership & Pricing Page (`/membership`)
+
+1. **Resolution of 2 vs 3 Plans:**
+   - Clearly define the 2 core tiers: **Starter Plan (₹700)** and **Pro Plan (₹1,200)**.
+   - Introduce an optional **Personal Coaching Add-On** banner or a clear 3rd tier if offered by the gym, rather than phantom "Elite" table columns.
+2. **Transparent "No Fine Print" Promise:**
+   - Visual comparison table with green checkmarks and clear tooltips for every feature.
+   - Explicit callout box:
+     - ✅ Locker facility included free.
+     - ✅ Free body assessment & machine orientation.
+     - ❌ No surprise maintenance charges.
+     - ❌ No locker deposit fees.
+3. **Interactive Membership Calculator:**
+   - Toggle: `Individual` vs `Couple / Duo` (shows ₹1,100 Starter couple plan).
+   - Savings visualizer: *"Save ₹1,400 with annual payment"*.
+
+---
+
+### 4.3 Free Trial Funnel (`/free-trial`)
+
+1. **Mobile-First Layout Reversal:**
+   - Move the **Trial Booking Form to the TOP** on mobile.
+   - Move the Perks and BMI Calculator below the form or into a collapsible tab.
+2. **Friction-Free WhatsApp Fast-Track:**
+   - Offer a 1-tap option: *"Don't want to type? Book your trial in 1 tap on WhatsApp 💬"*.
+3. **Form Refinements:**
+   - Retain the clean 3-step progress bar (Name → Phone → Goal & Timing).
+   - Add an instant confirmation preview: *"You will receive a WhatsApp message within 15 minutes with your entry pass."*
+4. **Post-Submission Delight:**
+   - After booking: Show a real map pin, gym photo, what to bring checklist (shoes, water bottle, towel), and coach contact.
+
+---
+
+### 4.4 Ladies Batch Page (`/ladies-batch`)
+
+1. **Layout & Framing Fixes:**
+   - Add `pt-28 pb-16` hero padding so the title isn't obscured by the fixed header.
+   - Change the CTA button from a circular link to `/free-trial?batch=ladies` or direct WhatsApp booking.
+2. **Comfort & Privacy Guarantees:**
+   - Feature clear photography of the floor during dedicated hours.
+   - Highlight privacy protocols:
+     - 🔒 Exclusive floor access 4:00 PM – 5:00 PM daily.
+     - 👩‍🏫 Dedicated female trainer / certified guidance.
+     - 🚫 No male entry permitted during the reserved hour.
+     - 🧘 Beginner-friendly onboarding with custom pacing.
+3. **Direct Testimonials:**
+   - Embed real female member transformation quotes and reviews.
+
+---
+
+### 4.5 Equipment & Gallery Showcase (`/equipment` & `/gallery`)
+
+1. **Replace Stock Photos with Authentic Facility Assets:**
+   - Universally deploy the newly curated 12 authentic facility photos across all categories:
+     - `gym-floor-high-ceiling-overview.jpeg`
+     - `gym-floor-plate-loaded-row.jpeg`
+     - `gym-floor-free-weights-training.jpeg`
+     - `gym-floor-cardio-mural.jpeg`
+     - `gym-floor-squat-legpress-station.jpeg`
+     - `gym-reception-lounge.jpeg`
+2. **Interactive Equipment Explorer:**
+   - Category switcher: `Chest & Shoulders`, `Back & Lats`, `Legs & Glutes`, `Arms & Core`, `Cardio Deck`.
+   - Hover cards showing machine name, brand/series (e.g. *Jaguar Series*), and muscle target.
+3. **Enhanced Lightbox:**
+   - Keyboard navigation (`←` / `→` arrows, `Esc` to close).
+   - Swipe gestures for mobile.
+   - Descriptive caption overlay with gym floor zone context.
+
+---
+
+### 4.6 Head Coach & Social Proof (`/coach` & `/transformations`)
+
+1. **Coach Page:**
+   - Showcase coach certifications with verifiable badge icons.
+   - Add a *"Training Philosophy"* quote section.
+   - Direct CTA: *"Train with Coach [Name] — Book a Free Consultation"*.
+2. **Transformations Page:**
+   - Upgrade the Before/After slider with responsive touch-drag and clear metric badges (e.g., `-14 kg in 4 months`, `Lean muscle build`).
+   - Group results by goal: `Weight Loss`, `Muscle Building`, `Competition Prep`.
+
+---
+
+## 5. Visual Design System & Aesthetic Refinements
+
+### 5.1 Color Palette & Contrast Tokens
+
+```
+Charcoal Base (Canvas):     #1A1613  (Rich warm espresso dark)
+Slate Layer (Cards/Panels): #2A241E  (Layered dark surface)
+Warm Paper (Light Theme):   #F3EFE7  (Editorial warm cream)
+Card Light:                 #FBF9F4  (Clean bright card surface)
+Ember Accent (Primary):     #E2552B  (High-energy, focused CTA)
+Ember Dim (Text Contrast):  #B23E1B  (WCAG AA compliant text on light bg)
+Text Inks:                  #1C1917 (900) · #2D2823 (800) · #6F675B (500)
+```
+
+### 5.2 Typography System
+- **Display Headings (`font-display`):** `Oswald` — Uppercase, tracking tight to normal, punchy line heights (`leading-[0.95]`). Reserved for impactful headlines.
+- **Body & Controls (`font-sans`):** `Inter` — High legibility, crisp tabular numerals for pricing and hours.
+
+### 5.3 Micro-Interactions & Motion Principles
+1. **Sticky Floating Bar:** Ensure `Call Now` has dark charcoal text on white/cream, and `Free Trial` has crisp white text on `#E2552B` with active press `scale-95`.
+2. **Hover States:** Lift effect (`hover:-translate-y-1 shadow-lift`) on cards, glowing ember borders (`border-brand-cyan/40`) on interactive focus.
+3. **Accordion & Tabs:** Spring physics for pill sliders and layout switches using Framer Motion.
+
+---
+
+## 6. Phased Implementation Roadmap
+
+### Phase 1: High-Impact Fixes & Conversion Foundation (Immediate)
+- [ ] Fix default `billing` state in [`src/components/sections/PlansGrid.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/sections/PlansGrid.tsx) to `"monthly"` (eliminating the `"₹- /month"` bug).
+- [ ] Align copy across [`src/app/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/page.tsx) and [`src/app/membership/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/membership/page.tsx) (resolve 2 vs 3 plans discrepancy).
+- [ ] Reorganize desktop [`src/components/layout/Navbar.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/components/layout/Navbar.tsx) to prevent link crowding on laptop screens.
+- [ ] Fix [`src/app/ladies-batch/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/ladies-batch/page.tsx) hero padding and repair circular button link.
+- [ ] Invert mobile order on [`src/app/free-trial/page.tsx`](file:///Users/pratideepnaik/Desktop/universal%20gym%20website/src/app/free-trial/page.tsx) so `TrialForm` appears above the fold.
+
+### Phase 2: Narrative Flow & Layout Contrast (Week 1–2)
+- [ ] Overhaul Home Hero copy: tighten value proposition and add fast-scan reassurance chips.
+- [ ] Restructure `TrustBadges` into 4 high-contrast proof clusters.
+- [ ] Integrate authentic gym floor photos across all gallery tabs and equipment sections.
+- [ ] Refine `MobileCtaBar` and `WhatsAppFAB` positioning and color contrast.
+- [ ] Enhance Google Reviews section with aggregate ratings badge and smooth scroll controls.
+
+### Phase 3: Interactive Polish & Conversion Accelerators (Week 2–3)
+- [ ] Add 1-tap WhatsApp booking shortcuts to all high-intent conversion moments.
+- [ ] Implement interactive equipment filter tabs with muscle group indicators.
+- [ ] Expand Before/After transformation comparison cards with verified member quotes.
+- [ ] Audit touch targets, keyboard accessibility, and safe-area insets across iOS and Android devices.
+
+---
+
+## 7. Key Performance Indicators (KPIs)
+
+| Metric | Current Baseline | Target Post-Improvement |
+|---|---|---|
+| **Free Trial Booking Rate** | Standard form completion | **+40%** via mobile form repositioning & 1-tap WhatsApp |
+| **Pricing Clarity / Bounce Rate** | High drop-off due to `₹-` display | **< 30% bounce** on `/membership` |
+| **Mobile Navigation Engagement** | Low engagement with 10-item stack | **+50% click-through** on visual drawer items |
+| **Average Session Duration** | ~45 seconds | **> 1 min 45s** through rich real photo gallery & equipment exploration |

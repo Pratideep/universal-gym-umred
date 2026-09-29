@@ -7,7 +7,7 @@ import type { EquipmentCategory } from "@/lib/equipment";
 import { Lightbox } from "./Lightbox";
 
 export function EquipmentTabs({ data }: { data: EquipmentCategory[] }) {
-  const [active, setActive] = useState(data[0]?.slug ?? "chest");
+  const [active, setActive] = useState(data[0]?.slug ?? "general");
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const current = data.find((d) => d.slug === active) ?? data[0];
 

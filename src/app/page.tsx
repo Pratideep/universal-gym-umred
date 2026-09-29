@@ -51,8 +51,8 @@ export default function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Membership"
-          title="Three plans. No joining fee."
-          description="Pay monthly or save with annual. What you see is what you pay — no registration charge, no locker deposit, no surprises."
+          title="Simple, honest plans. No joining fee."
+          description="Pay monthly or save with annual. What you see is what you pay — no registration charge, no locker deposit, no hidden surprises."
         />
         <div className="mt-12">
           <PlansGrid />

@@ -13,6 +13,57 @@ export type EquipmentCategory = {
 
 const equipmentCatalog: EquipmentCategory[] = [
   {
+    slug: "general",
+    label: "Gym Floor",
+    items: [
+      {
+        src: "/images/general/gym-floor-plate-loaded-row.jpeg",
+        name: "Main Strength Floor",
+        subtitle: "Jaguar Series plate-loaded machines row",
+      },
+      {
+        src: "/images/general/gym-floor-cardio-mural.jpeg",
+        name: "Cardio & Signature Floor",
+        subtitle: "Dedicated cardio row & motivational wall",
+      },
+      {
+        src: "/images/general/gym-floor-free-weights-training.jpeg",
+        name: "Free Weights & Dumbbells",
+        subtitle: "Complete dumbbell rack and multi-angle benches",
+      },
+      {
+        src: "/images/general/gym-floor-high-ceiling-overview.jpeg",
+        name: "Spacious Training Arena",
+        subtitle: "High ceiling layout with full mirror wall",
+      },
+      {
+        src: "/images/general/gym-floor-spin-core-zone.jpeg",
+        name: "Spin & Conditioning Area",
+        subtitle: "Spin bikes, stairmaster, and core stations",
+      },
+      {
+        src: "/images/general/gym-floor-lat-pulldown-squat.jpeg",
+        name: "Power & Back Stations",
+        subtitle: "Squat racks, power stations, and lat pulldowns",
+      },
+      {
+        src: "/images/general/gym-floor-squat-legpress-station.jpeg",
+        name: "Heavy Leg Press Station",
+        subtitle: "Plate-loaded 45-degree leg press setup",
+      },
+      {
+        src: "/images/general/gym-floor-cardio-machines.jpeg",
+        name: "Cardio & Selectorized Line",
+        subtitle: "Cross-trainers, treadmills, and pin-select machines",
+      },
+      {
+        src: "/images/general/gym-reception-lounge.jpeg",
+        name: "Front Reception & Lounge",
+        subtitle: "Welcoming entrance and member check-in lounge",
+      },
+    ],
+  },
+  {
     slug: "chest",
     label: "Chest",
     items: [

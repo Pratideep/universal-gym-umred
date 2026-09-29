@@ -5,7 +5,7 @@ import { ArrowRight, Star, Users, Trophy, ChevronDown, Clock, MapPin } from "luc
 import { site } from "@/lib/site";
 import { Counter } from "@/components/motion/Counter";
 
-const POSTER = "/images/hero_gym_dark_neon.png";
+const POSTER = "/images/general/gym-floor-high-ceiling-overview.jpeg";
 
 export function Hero() {
   const proof = site.proof;
@@ -13,10 +13,9 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-start lg:items-center pt-28 pb-16 lg:py-0 overflow-hidden bg-brand-navy">
       <div className="absolute inset-0 -z-0">
-        {/* Photo desaturated + heavily darkened so it reads as a moody backdrop
-            rather than a glowing neon stock render */}
+        {/* Authentic Universal Gym Umred facility backdrop */}
         <div
-          className="absolute inset-0 bg-cover bg-center saturate-[0.55] contrast-[1.05]"
+          className="absolute inset-0 bg-cover bg-center saturate-[0.65] contrast-[1.05]"
           style={{ backgroundImage: `url('${POSTER}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/92 to-brand-navy/55" />
